@@ -65,17 +65,17 @@ bitcore.deps.bnjs = require('bn.js');
 bitcore.deps.bs58 = require('bs58');
 bitcore.deps.Buffer = Buffer;
 bitcore.deps.elliptic = require('elliptic');
-bitcore.deps._ = require('lomonacocoin');
+bitcore.deps._ = require('lodash');
 
 // Internal usage, exposed for testing/advanced tweaking
 bitcore.Transaction.sighash = require('./lib/transaction/sighash');
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer)
-},{"./lib/address":2,"./lib/block":5,"./lib/block/blockheader":4,"./lib/block/merkleblock":6,"./lib/crypto/bn":7,"./lib/crypto/ecdsa":8,"./lib/crypto/hash":9,"./lib/crypto/point":10,"./lib/crypto/random":11,"./lib/crypto/signature":12,"./lib/encoding/base58":13,"./lib/encoding/base58check":14,"./lib/encoding/bufferreader":15,"./lib/encoding/bufferwriter":16,"./lib/encoding/varint":17,"./lib/errors":18,"./lib/govobject":21,"./lib/hdprivatekey.js":23,"./lib/hdpublickey.js":24,"./lib/networks":25,"./lib/opcode":26,"./lib/privatekey":27,"./lib/publickey":28,"./lib/script":29,"./lib/transaction":32,"./lib/transaction/sighash":40,"./lib/unit":44,"./lib/uri":45,"./lib/util/buffer":46,"./lib/util/js":47,"./lib/util/preconditions":48,"./package.json":104,"bn.js":49,"bs58":51,"buffer":151,"elliptic":53,"lomonacocoin":81}],2:[function(require,module,exports){
+},{"./lib/address":2,"./lib/block":5,"./lib/block/blockheader":4,"./lib/block/merkleblock":6,"./lib/crypto/bn":7,"./lib/crypto/ecdsa":8,"./lib/crypto/hash":9,"./lib/crypto/point":10,"./lib/crypto/random":11,"./lib/crypto/signature":12,"./lib/encoding/base58":13,"./lib/encoding/base58check":14,"./lib/encoding/bufferreader":15,"./lib/encoding/bufferwriter":16,"./lib/encoding/varint":17,"./lib/errors":18,"./lib/govobject":21,"./lib/hdprivatekey.js":23,"./lib/hdpublickey.js":24,"./lib/networks":25,"./lib/opcode":26,"./lib/privatekey":27,"./lib/publickey":28,"./lib/script":29,"./lib/transaction":32,"./lib/transaction/sighash":40,"./lib/unit":44,"./lib/uri":45,"./lib/util/buffer":46,"./lib/util/js":47,"./lib/util/preconditions":48,"./package.json":104,"bn.js":49,"bs58":51,"buffer":151,"elliptic":53,"lodash":81}],2:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var $ = require('./util/preconditions');
 var errors = require('./errors');
 var Base58Check = require('./encoding/base58check');
@@ -573,11 +573,11 @@ module.exports = Address;
 var Script = require('./script');
 
 }).call(this,require("buffer").Buffer)
-},{"./crypto/hash":9,"./encoding/base58check":14,"./errors":18,"./networks":25,"./publickey":28,"./script":29,"./util/js":47,"./util/preconditions":48,"buffer":151,"lomonacocoin":81}],3:[function(require,module,exports){
+},{"./crypto/hash":9,"./encoding/base58check":14,"./errors":18,"./networks":25,"./publickey":28,"./script":29,"./util/js":47,"./util/preconditions":48,"buffer":151,"lodash":81}],3:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var BlockHeader = require('./blockheader');
 var BN = require('../crypto/bn');
 var BufferUtil = require('../util/buffer');
@@ -858,11 +858,11 @@ Block.Values = {
 module.exports = Block;
 
 }).call(this,require("buffer").Buffer)
-},{"../crypto/bn":7,"../crypto/hash":9,"../encoding/bufferreader":15,"../encoding/bufferwriter":16,"../transaction":32,"../util/buffer":46,"../util/preconditions":48,"./blockheader":4,"buffer":151,"lomonacocoin":81}],4:[function(require,module,exports){
+},{"../crypto/bn":7,"../crypto/hash":9,"../encoding/bufferreader":15,"../encoding/bufferwriter":16,"../transaction":32,"../util/buffer":46,"../util/preconditions":48,"./blockheader":4,"buffer":151,"lodash":81}],4:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var BN = require('../crypto/bn');
 var BufferUtil = require('../util/buffer');
 var BufferReader = require('../encoding/bufferreader');
@@ -1159,7 +1159,7 @@ BlockHeader.Constants = {
 module.exports = BlockHeader;
 
 }).call(this,require("buffer").Buffer)
-},{"../crypto/bn":7,"../crypto/hash":9,"../encoding/bufferreader":15,"../encoding/bufferwriter":16,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"buffer":151,"lomonacocoin":81}],5:[function(require,module,exports){
+},{"../crypto/bn":7,"../crypto/hash":9,"../encoding/bufferreader":15,"../encoding/bufferwriter":16,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"buffer":151,"lodash":81}],5:[function(require,module,exports){
 module.exports = require('./block');
 
 module.exports.BlockHeader = require('./blockheader');
@@ -1169,7 +1169,7 @@ module.exports.MerkleBlock = require('./merkleblock');
 (function (Buffer){
 'use strict';
 
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var BlockHeader = require('./blockheader');
 var BufferUtil = require('../util/buffer');
 var BufferReader = require('../encoding/bufferreader');
@@ -1441,13 +1441,13 @@ MerkleBlock.fromObject = function fromObject(obj) {
 module.exports = MerkleBlock;
 
 }).call(this,require("buffer").Buffer)
-},{"../crypto/hash":9,"../encoding/bufferreader":15,"../encoding/bufferwriter":16,"../transaction":32,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"./blockheader":4,"buffer":151,"lomonacocoin":81}],7:[function(require,module,exports){
+},{"../crypto/hash":9,"../encoding/bufferreader":15,"../encoding/bufferwriter":16,"../transaction":32,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"./blockheader":4,"buffer":151,"lodash":81}],7:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
 var BN = require('bn.js');
 var $ = require('../util/preconditions');
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 
 var reversebuf = function(buf) {
   var buf2 = new Buffer(buf.length);
@@ -1647,7 +1647,7 @@ BN.pad = function(buf, natlen, size) {
 module.exports = BN;
 
 }).call(this,require("buffer").Buffer)
-},{"../util/preconditions":48,"bn.js":49,"buffer":151,"lomonacocoin":81}],8:[function(require,module,exports){
+},{"../util/preconditions":48,"bn.js":49,"buffer":151,"lodash":81}],8:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
@@ -1658,7 +1658,7 @@ var PublicKey = require('../publickey');
 var Random = require('./random');
 var Hash = require('./hash');
 var BufferUtil = require('../util/buffer');
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var $ = require('../util/preconditions');
 
 var ECDSA = function ECDSA(obj) {
@@ -1947,7 +1947,7 @@ ECDSA.verify = function(hashbuf, sig, pubkey, endian) {
 module.exports = ECDSA;
 
 }).call(this,require("buffer").Buffer)
-},{"../publickey":28,"../util/buffer":46,"../util/preconditions":48,"./bn":7,"./hash":9,"./point":10,"./random":11,"./signature":12,"buffer":151,"lomonacocoin":81}],9:[function(require,module,exports){
+},{"../publickey":28,"../util/buffer":46,"../util/preconditions":48,"./bn":7,"./hash":9,"./point":10,"./random":11,"./signature":12,"buffer":151,"lodash":81}],9:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
@@ -2258,7 +2258,7 @@ module.exports = Random;
 'use strict';
 
 var BN = require('./bn');
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var $ = require('../util/preconditions');
 var BufferUtil = require('../util/buffer');
 var JSUtil = require('../util/js');
@@ -2569,11 +2569,11 @@ Signature.SIGHASH_ANYONECANPAY = 0x80;
 module.exports = Signature;
 
 }).call(this,require("buffer").Buffer)
-},{"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"./bn":7,"buffer":151,"lomonacocoin":81}],13:[function(require,module,exports){
+},{"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"./bn":7,"buffer":151,"lodash":81}],13:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var bs58 = require('bs58');
 var buffer = require('buffer');
 
@@ -2643,11 +2643,11 @@ Base58.prototype.toString = function() {
 module.exports = Base58;
 
 }).call(this,require("buffer").Buffer)
-},{"bs58":51,"buffer":151,"lomonacocoin":81}],14:[function(require,module,exports){
+},{"bs58":51,"buffer":151,"lodash":81}],14:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var Base58 = require('./base58');
 var buffer = require('buffer');
 var sha256sha256 = require('../crypto/hash').sha256sha256;
@@ -2742,11 +2742,11 @@ Base58Check.prototype.toString = function() {
 module.exports = Base58Check;
 
 }).call(this,require("buffer").Buffer)
-},{"../crypto/hash":9,"./base58":13,"buffer":151,"lomonacocoin":81}],15:[function(require,module,exports){
+},{"../crypto/hash":9,"./base58":13,"buffer":151,"lodash":81}],15:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var $ = require('../util/preconditions');
 var BufferUtil = require('../util/buffer');
 var BN = require('../crypto/bn');
@@ -2944,7 +2944,7 @@ BufferReader.prototype.readReverse = function(len) {
 module.exports = BufferReader;
 
 }).call(this,require("buffer").Buffer)
-},{"../crypto/bn":7,"../util/buffer":46,"../util/preconditions":48,"buffer":151,"lomonacocoin":81}],16:[function(require,module,exports){
+},{"../crypto/bn":7,"../util/buffer":46,"../util/preconditions":48,"buffer":151,"lodash":81}],16:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
@@ -3178,7 +3178,7 @@ module.exports = Varint;
 },{"../crypto/bn":7,"./bufferreader":15,"./bufferwriter":16,"buffer":151}],18:[function(require,module,exports){
 'use strict';
 
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 
 function format(message, args) {
   return message
@@ -3238,7 +3238,7 @@ module.exports.extend = function(spec) {
   return traverseNode(bitcore.Error, spec);
 };
 
-},{"./spec":19,"lomonacocoin":81}],19:[function(require,module,exports){
+},{"./spec":19,"lodash":81}],19:[function(require,module,exports){
 'use strict';
 
 var docsURL = 'http://bitcore.io/';
@@ -3452,7 +3452,7 @@ module.exports = [{
 (function (Buffer){
 'use strict';
 
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var $ = require('../util/preconditions');
 var buffer = require('buffer');
 var compare = Buffer.compare || require('buffer-compare');
@@ -3658,7 +3658,7 @@ GovObject.shallowCopy = function(govObject) {
 module.exports = GovObject;
 
 }).call(this,require("buffer").Buffer)
-},{"../address":2,"../encoding/bufferreader":15,"../encoding/bufferwriter":16,"../errors":18,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"buffer":151,"buffer-compare":52,"lomonacocoin":81}],21:[function(require,module,exports){
+},{"../address":2,"../encoding/bufferreader":15,"../encoding/bufferwriter":16,"../errors":18,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"buffer":151,"buffer-compare":52,"lodash":81}],21:[function(require,module,exports){
 module.exports = require('./govobject');
 
 module.exports.Proposal = require('./types/proposal');
@@ -3666,7 +3666,7 @@ module.exports.Proposal = require('./types/proposal');
 },{"./govobject":20,"./types/proposal":22}],22:[function(require,module,exports){
 'use strict';
 
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var $ = require('../../util/preconditions');
 var GovObject = require('../govobject');
 var errors = require('../../errors');
@@ -3830,14 +3830,14 @@ Proposal.prototype.getSerializationError = function(opts) {
 
 module.exports = Proposal;
 
-},{"../../errors":18,"../../util/preconditions":48,"../govobject":20,"lomonacocoin":81,"util":266}],23:[function(require,module,exports){
+},{"../../errors":18,"../../util/preconditions":48,"../govobject":20,"lodash":81,"util":266}],23:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
 
 var assert = require('assert');
 var buffer = require('buffer');
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var $ = require('./util/preconditions');
 
 var BN = require('./crypto/bn');
@@ -4480,11 +4480,11 @@ assert(HDPrivateKey.ChecksumEnd === HDPrivateKey.SerializedByteSize);
 module.exports = HDPrivateKey;
 
 }).call(this,require("buffer").Buffer)
-},{"./crypto/bn":7,"./crypto/hash":9,"./crypto/point":10,"./crypto/random":11,"./encoding/base58":13,"./encoding/base58check":14,"./errors":18,"./hdpublickey":24,"./networks":25,"./privatekey":27,"./util/buffer":46,"./util/js":47,"./util/preconditions":48,"assert":119,"buffer":151,"lomonacocoin":81}],24:[function(require,module,exports){
+},{"./crypto/bn":7,"./crypto/hash":9,"./crypto/point":10,"./crypto/random":11,"./encoding/base58":13,"./encoding/base58check":14,"./errors":18,"./hdpublickey":24,"./networks":25,"./privatekey":27,"./util/buffer":46,"./util/js":47,"./util/preconditions":48,"assert":119,"buffer":151,"lodash":81}],24:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var $ = require('./util/preconditions');
 
 var BN = require('./crypto/bn');
@@ -4980,9 +4980,9 @@ assert(HDPublicKey.ChecksumEnd === HDPublicKey.SerializedByteSize);
 module.exports = HDPublicKey;
 
 }).call(this,require("buffer").Buffer)
-},{"./crypto/bn":7,"./crypto/hash":9,"./crypto/point":10,"./encoding/base58":13,"./encoding/base58check":14,"./errors":18,"./hdprivatekey":23,"./networks":25,"./publickey":28,"./util/buffer":46,"./util/js":47,"./util/preconditions":48,"assert":119,"buffer":151,"lomonacocoin":81}],25:[function(require,module,exports){
+},{"./crypto/bn":7,"./crypto/hash":9,"./crypto/point":10,"./encoding/base58":13,"./encoding/base58check":14,"./errors":18,"./hdprivatekey":23,"./networks":25,"./publickey":28,"./util/buffer":46,"./util/js":47,"./util/preconditions":48,"assert":119,"buffer":151,"lodash":81}],25:[function(require,module,exports){
 'use strict';
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 
 var BufferUtil = require('./util/buffer');
 var JSUtil = require('./util/js');
@@ -5248,11 +5248,11 @@ module.exports = {
   disableRegtest: disableRegtest
 };
 
-},{"./util/buffer":46,"./util/js":47,"lomonacocoin":81}],26:[function(require,module,exports){
+},{"./util/buffer":46,"./util/js":47,"lodash":81}],26:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var $ = require('./util/preconditions');
 var BufferUtil = require('./util/buffer');
 var JSUtil = require('./util/js');
@@ -5500,11 +5500,11 @@ Opcode.prototype.inspect = function() {
 module.exports = Opcode;
 
 }).call(this,require("buffer").Buffer)
-},{"./util/buffer":46,"./util/js":47,"./util/preconditions":48,"buffer":151,"lomonacocoin":81}],27:[function(require,module,exports){
+},{"./util/buffer":46,"./util/js":47,"./util/preconditions":48,"buffer":151,"lodash":81}],27:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var Address = require('./address');
 var Base58Check = require('./encoding/base58check');
 var BN = require('./crypto/bn');
@@ -5904,7 +5904,7 @@ PrivateKey.prototype.inspect = function() {
 module.exports = PrivateKey;
 
 }).call(this,require("buffer").Buffer)
-},{"./address":2,"./crypto/bn":7,"./crypto/point":10,"./crypto/random":11,"./encoding/base58check":14,"./networks":25,"./publickey":28,"./util/js":47,"./util/preconditions":48,"buffer":151,"lomonacocoin":81}],28:[function(require,module,exports){
+},{"./address":2,"./crypto/bn":7,"./crypto/point":10,"./crypto/random":11,"./encoding/base58check":14,"./networks":25,"./publickey":28,"./util/js":47,"./util/preconditions":48,"buffer":151,"lodash":81}],28:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
@@ -5913,7 +5913,7 @@ var Point = require('./crypto/point');
 var Hash = require('./crypto/hash');
 var JSUtil = require('./util/js');
 var Network = require('./networks');
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var $ = require('./util/preconditions');
 
 /**
@@ -6301,7 +6301,7 @@ PublicKey.prototype.inspect = function() {
 module.exports = PublicKey;
 
 }).call(this,require("buffer").Buffer)
-},{"./address":2,"./crypto/bn":7,"./crypto/hash":9,"./crypto/point":10,"./networks":25,"./privatekey":27,"./util/js":47,"./util/preconditions":48,"buffer":151,"lomonacocoin":81}],29:[function(require,module,exports){
+},{"./address":2,"./crypto/bn":7,"./crypto/hash":9,"./crypto/point":10,"./networks":25,"./privatekey":27,"./util/js":47,"./util/preconditions":48,"buffer":151,"lodash":81}],29:[function(require,module,exports){
 module.exports = require('./script');
 
 module.exports.Interpreter = require('./interpreter');
@@ -6310,7 +6310,7 @@ module.exports.Interpreter = require('./interpreter');
 (function (Buffer){
 'use strict';
 
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 
 var Script = require('./script');
 var Opcode = require('../opcode');
@@ -7575,7 +7575,7 @@ Interpreter.prototype.step = function() {
 
 
 }).call(this,require("buffer").Buffer)
-},{"../crypto/bn":7,"../crypto/hash":9,"../crypto/signature":12,"../opcode":26,"../publickey":28,"../transaction":32,"./script":31,"buffer":151,"lomonacocoin":81}],31:[function(require,module,exports){
+},{"../crypto/bn":7,"../crypto/hash":9,"../crypto/signature":12,"../opcode":26,"../publickey":28,"../transaction":32,"./script":31,"buffer":151,"lodash":81}],31:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
@@ -7588,7 +7588,7 @@ var PublicKey = require('../publickey');
 var Signature = require('../crypto/signature');
 var Networks = require('../networks');
 var $ = require('../util/preconditions');
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var errors = require('../errors');
 var buffer = require('buffer');
 var BufferUtil = require('../util/buffer');
@@ -8663,7 +8663,7 @@ Script.prototype.getSignatureOperationsCount = function(accurate) {
 module.exports = Script;
 
 }).call(this,require("buffer").Buffer)
-},{"../address":2,"../crypto/hash":9,"../crypto/signature":12,"../encoding/bufferreader":15,"../encoding/bufferwriter":16,"../errors":18,"../networks":25,"../opcode":26,"../publickey":28,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"buffer":151,"lomonacocoin":81}],32:[function(require,module,exports){
+},{"../address":2,"../crypto/hash":9,"../crypto/signature":12,"../encoding/bufferreader":15,"../encoding/bufferwriter":16,"../errors":18,"../networks":25,"../opcode":26,"../publickey":28,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"buffer":151,"lodash":81}],32:[function(require,module,exports){
 module.exports = require('./transaction');
 
 module.exports.Input = require('./input');
@@ -8683,7 +8683,7 @@ module.exports.MultiSigScriptHash = require('./multisigscripthash.js');
 },{"./input":34,"./multisig.js":35,"./multisigscripthash.js":36,"./publickey":37,"./publickeyhash":38}],34:[function(require,module,exports){
 'use strict';
 
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var $ = require('../../util/preconditions');
 var errors = require('../../errors');
 var BufferWriter = require('../../encoding/bufferwriter');
@@ -8878,10 +8878,10 @@ Input.prototype._estimateSize = function() {
 
 module.exports = Input;
 
-},{"../../encoding/bufferwriter":16,"../../errors":18,"../../script":29,"../../util/buffer":46,"../../util/js":47,"../../util/preconditions":48,"../output":39,"../sighash":40,"buffer":151,"lomonacocoin":81}],35:[function(require,module,exports){
+},{"../../encoding/bufferwriter":16,"../../errors":18,"../../script":29,"../../util/buffer":46,"../../util/js":47,"../../util/preconditions":48,"../output":39,"../sighash":40,"buffer":151,"lodash":81}],35:[function(require,module,exports){
 'use strict';
 
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var inherits = require('inherits');
 var Transaction = require('../transaction');
 var Input = require('./input');
@@ -9091,10 +9091,10 @@ MultiSigInput.prototype._estimateSize = function() {
 
 module.exports = MultiSigInput;
 
-},{"../../crypto/signature":12,"../../publickey":28,"../../script":29,"../../util/buffer":46,"../../util/preconditions":48,"../output":39,"../sighash":40,"../signature":41,"../transaction":42,"./input":34,"inherits":80,"lomonacocoin":81}],36:[function(require,module,exports){
+},{"../../crypto/signature":12,"../../publickey":28,"../../script":29,"../../util/buffer":46,"../../util/preconditions":48,"../output":39,"../sighash":40,"../signature":41,"../transaction":42,"./input":34,"inherits":80,"lodash":81}],36:[function(require,module,exports){
 'use strict';
 
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var inherits = require('inherits');
 var Input = require('./input');
 var Output = require('../output');
@@ -9259,7 +9259,7 @@ MultiSigScriptHashInput.prototype._estimateSize = function() {
 
 module.exports = MultiSigScriptHashInput;
 
-},{"../../crypto/signature":12,"../../publickey":28,"../../script":29,"../../util/buffer":46,"../../util/preconditions":48,"../output":39,"../sighash":40,"../signature":41,"./input":34,"inherits":80,"lomonacocoin":81}],37:[function(require,module,exports){
+},{"../../crypto/signature":12,"../../publickey":28,"../../script":29,"../../util/buffer":46,"../../util/preconditions":48,"../output":39,"../sighash":40,"../signature":41,"./input":34,"inherits":80,"lodash":81}],37:[function(require,module,exports){
 'use strict';
 
 var inherits = require('inherits');
@@ -9450,7 +9450,7 @@ module.exports = PublicKeyHashInput;
 },{"../../crypto/hash":9,"../../crypto/signature":12,"../../script":29,"../../util/buffer":46,"../../util/preconditions":48,"../output":39,"../sighash":40,"../signature":41,"./input":34,"inherits":80}],39:[function(require,module,exports){
 'use strict';
 
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var BN = require('../crypto/bn');
 var buffer = require('buffer');
 var bufferUtil = require('../util/buffer');
@@ -9617,7 +9617,7 @@ Output.prototype.toBufferWriter = function(writer) {
 
 module.exports = Output;
 
-},{"../crypto/bn":7,"../encoding/bufferwriter":16,"../errors":18,"../script":29,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"buffer":151,"lomonacocoin":81}],40:[function(require,module,exports){
+},{"../crypto/bn":7,"../encoding/bufferwriter":16,"../errors":18,"../script":29,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"buffer":151,"lodash":81}],40:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
@@ -9632,7 +9632,7 @@ var BN = require('../crypto/bn');
 var Hash = require('../crypto/hash');
 var ECDSA = require('../crypto/ecdsa');
 var $ = require('../util/preconditions');
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 
 var SIGHASH_SINGLE_BUG = '0000000000000000000000000000000000000000000000000000000000000001';
 var BITS_64_ON = 'ffffffffffffffff';
@@ -9757,11 +9757,11 @@ module.exports = {
 };
 
 }).call(this,require("buffer").Buffer)
-},{"../crypto/bn":7,"../crypto/ecdsa":8,"../crypto/hash":9,"../crypto/signature":12,"../encoding/bufferreader":15,"../encoding/bufferwriter":16,"../script":29,"../util/preconditions":48,"./input":33,"./output":39,"./transaction":42,"buffer":151,"lomonacocoin":81}],41:[function(require,module,exports){
+},{"../crypto/bn":7,"../crypto/ecdsa":8,"../crypto/hash":9,"../crypto/signature":12,"../encoding/bufferreader":15,"../encoding/bufferwriter":16,"../script":29,"../util/preconditions":48,"./input":33,"./output":39,"./transaction":42,"buffer":151,"lodash":81}],41:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var $ = require('../util/preconditions');
 var inherits = require('inherits');
 var BufferUtil = require('../util/buffer');
@@ -9850,11 +9850,11 @@ TransactionSignature.fromObject = function(object) {
 module.exports = TransactionSignature;
 
 }).call(this,require("buffer").Buffer)
-},{"../crypto/signature":12,"../errors":18,"../publickey":28,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"buffer":151,"inherits":80,"lomonacocoin":81}],42:[function(require,module,exports){
+},{"../crypto/signature":12,"../errors":18,"../publickey":28,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"buffer":151,"inherits":80,"lodash":81}],42:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var $ = require('../util/preconditions');
 var buffer = require('buffer');
 var compare = Buffer.compare || require('buffer-compare');
@@ -10821,7 +10821,7 @@ Transaction.prototype.sort = function() {
 
 /**
  * Randomize this transaction's outputs ordering. The shuffling algorithm is a
- * version of the Fisher-Yates shuffle, provided by lomonacocoin's _.shuffle().
+ * version of the Fisher-Yates shuffle, provided by lodash's _.shuffle().
  *
  * @return {Transaction} this
  */
@@ -11084,10 +11084,10 @@ Transaction.prototype.enableRBF = function() {
 module.exports = Transaction;
 
 }).call(this,require("buffer").Buffer)
-},{"../address":2,"../crypto/bn":7,"../crypto/hash":9,"../crypto/signature":12,"../encoding/bufferreader":15,"../encoding/bufferwriter":16,"../errors":18,"../privatekey":27,"../script":29,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"./input":33,"./output":39,"./sighash":40,"./unspentoutput":43,"buffer":151,"buffer-compare":52,"lomonacocoin":81}],43:[function(require,module,exports){
+},{"../address":2,"../crypto/bn":7,"../crypto/hash":9,"../crypto/signature":12,"../encoding/bufferreader":15,"../encoding/bufferwriter":16,"../errors":18,"../privatekey":27,"../script":29,"../util/buffer":46,"../util/js":47,"../util/preconditions":48,"./input":33,"./output":39,"./sighash":40,"./unspentoutput":43,"buffer":151,"buffer-compare":52,"lodash":81}],43:[function(require,module,exports){
 'use strict';
 
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var $ = require('../util/preconditions');
 var JSUtil = require('../util/js');
 
@@ -11186,10 +11186,10 @@ UnspentOutput.prototype.toObject = UnspentOutput.prototype.toJSON = function toO
 
 module.exports = UnspentOutput;
 
-},{"../address":2,"../script":29,"../unit":44,"../util/js":47,"../util/preconditions":48,"lomonacocoin":81}],44:[function(require,module,exports){
+},{"../address":2,"../script":29,"../unit":44,"../util/js":47,"../util/preconditions":48,"lodash":81}],44:[function(require,module,exports){
 'use strict';
 
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 
 var errors = require('./errors');
 var $ = require('./util/preconditions');
@@ -11426,10 +11426,10 @@ Unit.prototype.inspect = function() {
 
 module.exports = Unit;
 
-},{"./errors":18,"./util/preconditions":48,"lomonacocoin":81}],45:[function(require,module,exports){
+},{"./errors":18,"./util/preconditions":48,"lodash":81}],45:[function(require,module,exports){
 'use strict';
 
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 var URL = require('url');
 
 var Address = require('./address');
@@ -11651,7 +11651,7 @@ URI.prototype.inspect = function() {
 
 module.exports = URI;
 
-},{"./address":2,"./unit":44,"lomonacocoin":81,"url":261}],46:[function(require,module,exports){
+},{"./address":2,"./unit":44,"lodash":81,"url":261}],46:[function(require,module,exports){
 (function (Buffer){
 'use strict';
 
@@ -11835,7 +11835,7 @@ module.exports.EMPTY_BUFFER = new Buffer(0);
 },{"./js":47,"./preconditions":48,"assert":119,"buffer":151}],47:[function(require,module,exports){
 'use strict';
 
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 
 /**
  * Determines whether a string contains only hexadecimal values
@@ -11918,11 +11918,11 @@ module.exports = {
   }
 };
 
-},{"lomonacocoin":81}],48:[function(require,module,exports){
+},{"lodash":81}],48:[function(require,module,exports){
 'use strict';
 
 var errors = require('../errors');
-var _ = require('lomonacocoin');
+var _ = require('lodash');
 
 module.exports = {
   checkState: function(condition, message) {
@@ -11954,7 +11954,7 @@ module.exports = {
   }
 };
 
-},{"../errors":18,"buffer":151,"lomonacocoin":81}],49:[function(require,module,exports){
+},{"../errors":18,"buffer":151,"lodash":81}],49:[function(require,module,exports){
 (function (module, exports) {
 
 'use strict';
@@ -19086,9 +19086,9 @@ arguments[4][79][0].apply(exports,arguments)
 (function (global){
 /**
  * @license
- * Lomonacocoin <https://lomonacocoin.com/>
+ * lodash <https://lodash.com/>
  * Copyright JS Foundation and other contributors <https://js.foundation/>
- * Released under MIT license <https://lomonacocoin.com/license>
+ * Released under MIT license <https://lodash.com/license>
  * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
  * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
  */
@@ -19108,13 +19108,13 @@ arguments[4][79][0].apply(exports,arguments)
       FUNC_ERROR_TEXT = 'Expected a function';
 
   /** Used to stand-in for `undefined` hash values. */
-  var HASH_UNDEFINED = '__lomonacocoin_hash_undefined__';
+  var HASH_UNDEFINED = '__lodash_hash_undefined__';
 
   /** Used as the maximum memoize cache size. */
   var MAX_MEMOIZE_SIZE = 500;
 
   /** Used as the internal argument placeholder. */
-  var PLACEHOLDER = '__lomonacocoin_placeholder__';
+  var PLACEHOLDER = '__lodash_placeholder__';
 
   /** Used to compose bitmasks for cloning. */
   var CLONE_DEEP_FLAG = 1,
@@ -20482,29 +20482,29 @@ arguments[4][79][0].apply(exports,arguments)
   /*--------------------------------------------------------------------------*/
 
   /**
-   * Create a new pristine `lomonacocoin` function using the `context` object.
+   * Create a new pristine `lodash` function using the `context` object.
    *
    * @static
    * @memberOf _
    * @since 1.1.0
    * @category Util
    * @param {Object} [context=root] The context object.
-   * @returns {Function} Returns a new `lomonacocoin` function.
+   * @returns {Function} Returns a new `lodash` function.
    * @example
    *
    * _.mixin({ 'foo': _.constant('foo') });
    *
-   * var lomonacocoin = _.runInContext();
-   * lomonacocoin.mixin({ 'bar': lomonacocoin.constant('bar') });
+   * var lodash = _.runInContext();
+   * lodash.mixin({ 'bar': lodash.constant('bar') });
    *
    * _.isFunction(_.foo);
    * // => true
    * _.isFunction(_.bar);
    * // => false
    *
-   * lomonacocoin.isFunction(lomonacocoin.foo);
+   * lodash.isFunction(lodash.foo);
    * // => false
-   * lomonacocoin.isFunction(lomonacocoin.bar);
+   * lodash.isFunction(lodash.bar);
    * // => true
    *
    * // Create a suped-up `defer` in Node.js.
@@ -20592,7 +20592,7 @@ arguments[4][79][0].apply(exports,arguments)
         ctxNow = Date && Date.now !== root.Date.now && Date.now,
         ctxSetTimeout = context.setTimeout !== root.setTimeout && context.setTimeout;
 
-    /* Built-in method references for those with the same name as other `lomonacocoin` methods. */
+    /* Built-in method references for those with the same name as other `lodash` methods. */
     var nativeCeil = Math.ceil,
         nativeFloor = Math.floor,
         nativeGetSymbols = Object.getOwnPropertySymbols,
@@ -20636,7 +20636,7 @@ arguments[4][79][0].apply(exports,arguments)
     /*------------------------------------------------------------------------*/
 
     /**
-     * Creates a `lomonacocoin` object which wraps `value` to enable implicit method
+     * Creates a `lodash` object which wraps `value` to enable implicit method
      * chain sequences. Methods that operate on and return arrays, collections,
      * and functions can be chained together. Methods that retrieve a single value
      * or may return a primitive value will automatically end the chain sequence
@@ -20660,7 +20660,7 @@ arguments[4][79][0].apply(exports,arguments)
      * Chaining is supported in custom builds as long as the `_#value` method is
      * directly or indirectly included in the build.
      *
-     * In addition to lomonacocoin methods, wrappers have `Array` and `String` methods.
+     * In addition to lodash methods, wrappers have `Array` and `String` methods.
      *
      * The wrapper `Array` methods are:
      * `concat`, `join`, `pop`, `push`, `shift`, `sort`, `splice`, and `unshift`
@@ -20729,8 +20729,8 @@ arguments[4][79][0].apply(exports,arguments)
      * @name _
      * @constructor
      * @category Seq
-     * @param {*} value The value to wrap in a `lomonacocoin` instance.
-     * @returns {Object} Returns the new `lomonacocoin` wrapper instance.
+     * @param {*} value The value to wrap in a `lodash` instance.
+     * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
      * function square(n) {
@@ -20752,16 +20752,16 @@ arguments[4][79][0].apply(exports,arguments)
      * _.isArray(squares.value());
      * // => true
      */
-    function lomonacocoin(value) {
+    function lodash(value) {
       if (isObjectLike(value) && !isArray(value) && !(value instanceof LazyWrapper)) {
-        if (value instanceof LomonacocoinWrapper) {
+        if (value instanceof lodashWrapper) {
           return value;
         }
         if (hasOwnProperty.call(value, '__wrapped__')) {
           return wrapperClone(value);
         }
       }
-      return new LomonacocoinWrapper(value);
+      return new lodashWrapper(value);
     }
 
     /**
@@ -20793,18 +20793,18 @@ arguments[4][79][0].apply(exports,arguments)
      *
      * @private
      */
-    function baseLomonacocoin() {
+    function baselodash() {
       // No operation performed.
     }
 
     /**
-     * The base constructor for creating `lomonacocoin` wrapper objects.
+     * The base constructor for creating `lodash` wrapper objects.
      *
      * @private
      * @param {*} value The value to wrap.
      * @param {boolean} [chainAll] Enable explicit method chain sequences.
      */
-    function LomonacocoinWrapper(value, chainAll) {
+    function lodashWrapper(value, chainAll) {
       this.__wrapped__ = value;
       this.__actions__ = [];
       this.__chain__ = !!chainAll;
@@ -20813,7 +20813,7 @@ arguments[4][79][0].apply(exports,arguments)
     }
 
     /**
-     * By default, the template delimiters used by lomonacocoin are like those in
+     * By default, the template delimiters used by lodash are like those in
      * embedded Ruby (ERB). Change the following template settings to use
      * alternative delimiters.
      *
@@ -20821,7 +20821,7 @@ arguments[4][79][0].apply(exports,arguments)
      * @memberOf _
      * @type {Object}
      */
-    lomonacocoin.templateSettings = {
+    lodash.templateSettings = {
 
       /**
        * Used to detect `data` property values to be HTML-escaped.
@@ -20864,21 +20864,21 @@ arguments[4][79][0].apply(exports,arguments)
       'imports': {
 
         /**
-         * A reference to the `lomonacocoin` function.
+         * A reference to the `lodash` function.
          *
          * @memberOf _.templateSettings.imports
          * @type {Function}
          */
-        '_': lomonacocoin
+        '_': lodash
       }
     };
 
-    // Ensure wrappers are instances of `baseLomonacocoin`.
-    lomonacocoin.prototype = baseLomonacocoin.prototype;
-    lomonacocoin.prototype.constructor = lomonacocoin;
+    // Ensure wrappers are instances of `baselodash`.
+    lodash.prototype = baselodash.prototype;
+    lodash.prototype.constructor = lodash;
 
-    LomonacocoinWrapper.prototype = baseCreate(baseLomonacocoin.prototype);
-    LomonacocoinWrapper.prototype.constructor = LomonacocoinWrapper;
+    lodashWrapper.prototype = baseCreate(baselodash.prototype);
+    lodashWrapper.prototype.constructor = lodashWrapper;
 
     /*------------------------------------------------------------------------*/
 
@@ -20996,8 +20996,8 @@ arguments[4][79][0].apply(exports,arguments)
       return result;
     }
 
-    // Ensure `LazyWrapper` is an instance of `baseLomonacocoin`.
-    LazyWrapper.prototype = baseCreate(baseLomonacocoin.prototype);
+    // Ensure `LazyWrapper` is an instance of `baselodash`.
+    LazyWrapper.prototype = baseCreate(baselodash.prototype);
     LazyWrapper.prototype.constructor = LazyWrapper;
 
     /*------------------------------------------------------------------------*/
@@ -24230,7 +24230,7 @@ arguments[4][79][0].apply(exports,arguments)
       return flatRest(function(funcs) {
         var length = funcs.length,
             index = length,
-            prereq = LomonacocoinWrapper.prototype.thru;
+            prereq = lodashWrapper.prototype.thru;
 
         if (fromRight) {
           funcs.reverse();
@@ -24241,7 +24241,7 @@ arguments[4][79][0].apply(exports,arguments)
             throw new TypeError(FUNC_ERROR_TEXT);
           }
           if (prereq && !wrapper && getFuncName(func) == 'wrapper') {
-            var wrapper = new LomonacocoinWrapper([], true);
+            var wrapper = new lodashWrapper([], true);
           }
         }
         index = wrapper ? index : length;
@@ -25007,7 +25007,7 @@ arguments[4][79][0].apply(exports,arguments)
      * @returns {*} Returns the placeholder value.
      */
     function getHolder(func) {
-      var object = hasOwnProperty.call(lomonacocoin, 'placeholder') ? lomonacocoin : func;
+      var object = hasOwnProperty.call(lodash, 'placeholder') ? lodash : func;
       return object.placeholder;
     }
 
@@ -25023,7 +25023,7 @@ arguments[4][79][0].apply(exports,arguments)
      * @returns {Function} Returns the chosen function or its result.
      */
     function getIteratee() {
-      var result = lomonacocoin.iteratee || iteratee;
+      var result = lodash.iteratee || iteratee;
       result = result === iteratee ? baseIteratee : result;
       return arguments.length ? result(arguments[0], arguments[1]) : result;
     }
@@ -25428,7 +25428,7 @@ arguments[4][79][0].apply(exports,arguments)
      */
     function isLaziable(func) {
       var funcName = getFuncName(func),
-          other = lomonacocoin[funcName];
+          other = lodash[funcName];
 
       if (typeof other != 'function' || !(funcName in LazyWrapper.prototype)) {
         return false;
@@ -25901,7 +25901,7 @@ arguments[4][79][0].apply(exports,arguments)
       if (wrapper instanceof LazyWrapper) {
         return wrapper.clone();
       }
-      var result = new LomonacocoinWrapper(wrapper.__wrapped__, wrapper.__chain__);
+      var result = new lodashWrapper(wrapper.__wrapped__, wrapper.__chain__);
       result.__actions__ = copyArray(wrapper.__actions__);
       result.__index__  = wrapper.__index__;
       result.__values__ = wrapper.__values__;
@@ -27801,7 +27801,7 @@ arguments[4][79][0].apply(exports,arguments)
     /*------------------------------------------------------------------------*/
 
     /**
-     * Creates a `lomonacocoin` wrapper instance that wraps `value` with explicit method
+     * Creates a `lodash` wrapper instance that wraps `value` with explicit method
      * chain sequences enabled. The result of such sequences must be unwrapped
      * with `_#value`.
      *
@@ -27810,7 +27810,7 @@ arguments[4][79][0].apply(exports,arguments)
      * @since 1.3.0
      * @category Seq
      * @param {*} value The value to wrap.
-     * @returns {Object} Returns the new `lomonacocoin` wrapper instance.
+     * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
      * var users = [
@@ -27830,7 +27830,7 @@ arguments[4][79][0].apply(exports,arguments)
      * // => 'pebbles is 1'
      */
     function chain(value) {
-      var result = lomonacocoin(value);
+      var result = lodash(value);
       result.__chain__ = true;
       return result;
     }
@@ -27898,7 +27898,7 @@ arguments[4][79][0].apply(exports,arguments)
      * @since 1.0.0
      * @category Seq
      * @param {...(string|string[])} [paths] The property paths to pick.
-     * @returns {Object} Returns the new `lomonacocoin` wrapper instance.
+     * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
      * var object = { 'a': [{ 'b': { 'c': 3 } }, 4] };
@@ -27922,7 +27922,7 @@ arguments[4][79][0].apply(exports,arguments)
         'args': [interceptor],
         'thisArg': undefined
       });
-      return new LomonacocoinWrapper(value, this.__chain__).thru(function(array) {
+      return new lodashWrapper(value, this.__chain__).thru(function(array) {
         if (length && !array.length) {
           array.push(undefined);
         }
@@ -27931,13 +27931,13 @@ arguments[4][79][0].apply(exports,arguments)
     });
 
     /**
-     * Creates a `lomonacocoin` wrapper instance with explicit method chain sequences enabled.
+     * Creates a `lodash` wrapper instance with explicit method chain sequences enabled.
      *
      * @name chain
      * @memberOf _
      * @since 0.1.0
      * @category Seq
-     * @returns {Object} Returns the new `lomonacocoin` wrapper instance.
+     * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
      * var users = [
@@ -27968,7 +27968,7 @@ arguments[4][79][0].apply(exports,arguments)
      * @memberOf _
      * @since 3.2.0
      * @category Seq
-     * @returns {Object} Returns the new `lomonacocoin` wrapper instance.
+     * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
      * var array = [1, 2];
@@ -27988,7 +27988,7 @@ arguments[4][79][0].apply(exports,arguments)
      * // => [1, 2, 3]
      */
     function wrapperCommit() {
-      return new LomonacocoinWrapper(this.value(), this.__chain__);
+      return new lodashWrapper(this.value(), this.__chain__);
     }
 
     /**
@@ -28053,7 +28053,7 @@ arguments[4][79][0].apply(exports,arguments)
      * @since 3.2.0
      * @category Seq
      * @param {*} value The value to plant.
-     * @returns {Object} Returns the new `lomonacocoin` wrapper instance.
+     * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
      * function square(n) {
@@ -28073,7 +28073,7 @@ arguments[4][79][0].apply(exports,arguments)
       var result,
           parent = this;
 
-      while (parent instanceof baseLomonacocoin) {
+      while (parent instanceof baselodash) {
         var clone = wrapperClone(parent);
         clone.__index__ = 0;
         clone.__values__ = undefined;
@@ -28098,7 +28098,7 @@ arguments[4][79][0].apply(exports,arguments)
      * @memberOf _
      * @since 0.1.0
      * @category Seq
-     * @returns {Object} Returns the new `lomonacocoin` wrapper instance.
+     * @returns {Object} Returns the new `lodash` wrapper instance.
      * @example
      *
      * var array = [1, 2, 3];
@@ -28122,7 +28122,7 @@ arguments[4][79][0].apply(exports,arguments)
           'args': [reverse],
           'thisArg': undefined
         });
-        return new LomonacocoinWrapper(wrapped, this.__chain__);
+        return new lodashWrapper(wrapped, this.__chain__);
       }
       return this.thru(reverse);
     }
@@ -28607,7 +28607,7 @@ arguments[4][79][0].apply(exports,arguments)
      * `iteratee`. The iteratee is invoked with three arguments:
      * (value, index|key, collection).
      *
-     * Many lomonacocoin methods are guarded to work as iteratees for methods like
+     * Many lodash methods are guarded to work as iteratees for methods like
      * `_.every`, `_.filter`, `_.map`, `_.mapValues`, `_.reject`, and `_.some`.
      *
      * The guarded methods are:
@@ -28740,7 +28740,7 @@ arguments[4][79][0].apply(exports,arguments)
      * value. The iteratee is invoked with four arguments:
      * (accumulator, value, index|key, collection).
      *
-     * Many lomonacocoin methods are guarded to work as iteratees for methods like
+     * Many lodash methods are guarded to work as iteratees for methods like
      * `_.reduce`, `_.reduceRight`, and `_.transform`.
      *
      * The guarded methods are:
@@ -33325,8 +33325,8 @@ arguments[4][79][0].apply(exports,arguments)
      * @returns {string} Returns the escaped string.
      * @example
      *
-     * _.escapeRegExp('[lomonacocoin](https://lomonacocoin.com/)');
-     * // => '\[lomonacocoin\]\(https://lomonacocoin\.com/\)'
+     * _.escapeRegExp('[lodash](https://lodash.com/)');
+     * // => '\[lodash\]\(https://lodash\.com/\)'
      */
     function escapeRegExp(string) {
       string = toString(string);
@@ -33730,7 +33730,7 @@ arguments[4][79][0].apply(exports,arguments)
      * for easier debugging.
      *
      * For more information on precompiling templates see
-     * [lomonacocoin's custom builds documentation](https://lomonacocoin.com/custom-builds).
+     * [lodash's custom builds documentation](https://lodash.com/custom-builds).
      *
      * For more information on Chrome extension sandboxes see
      * [Chrome's extensions documentation](https://developer.chrome.com/extensions/sandboxingEval).
@@ -33749,7 +33749,7 @@ arguments[4][79][0].apply(exports,arguments)
      *  An object to import into the template as free variables.
      * @param {RegExp} [options.interpolate=_.templateSettings.interpolate]
      *  The "interpolate" delimiter.
-     * @param {string} [options.sourceURL='lomonacocoin.templateSources[n]']
+     * @param {string} [options.sourceURL='lodash.templateSources[n]']
      *  The sourceURL of the compiled template.
      * @param {string} [options.variable='obj']
      *  The data object variable name.
@@ -33826,7 +33826,7 @@ arguments[4][79][0].apply(exports,arguments)
       // Based on John Resig's `tmpl` implementation
       // (http://ejohn.org/blog/javascript-micro-templating/)
       // and Laura Doktorova's doT.js (https://github.com/olado/doT).
-      var settings = lomonacocoin.templateSettings;
+      var settings = lodash.templateSettings;
 
       if (guard && isIterateeCall(string, options, guard)) {
         options = undefined;
@@ -33856,7 +33856,7 @@ arguments[4][79][0].apply(exports,arguments)
       var sourceURL = '//# sourceURL=' +
         ('sourceURL' in options
           ? options.sourceURL
-          : ('lomonacocoin.templateSources[' + (++templateCounter) + ']')
+          : ('lodash.templateSources[' + (++templateCounter) + ']')
         ) + '\n';
 
       string.replace(reDelimiters, function(match, escapeValue, interpolateValue, esTemplateValue, evaluateValue, offset) {
@@ -34708,14 +34708,14 @@ arguments[4][79][0].apply(exports,arguments)
      * object to the destination object. If `object` is a function, then methods
      * are added to its prototype as well.
      *
-     * **Note:** Use `_.runInContext` to create a pristine `lomonacocoin` function to
+     * **Note:** Use `_.runInContext` to create a pristine `lodash` function to
      * avoid conflicts caused by modifying the original.
      *
      * @static
      * @since 0.1.0
      * @memberOf _
      * @category Util
-     * @param {Function|Object} [object=lomonacocoin] The destination object.
+     * @param {Function|Object} [object=lodash] The destination object.
      * @param {Object} source The object of functions to add.
      * @param {Object} [options={}] The options object.
      * @param {boolean} [options.chain=true] Specify whether mixins are chainable.
@@ -34777,16 +34777,16 @@ arguments[4][79][0].apply(exports,arguments)
 
     /**
      * Reverts the `_` variable to its previous value and returns a reference to
-     * the `lomonacocoin` function.
+     * the `lodash` function.
      *
      * @static
      * @since 0.1.0
      * @memberOf _
      * @category Util
-     * @returns {Function} Returns the `lomonacocoin` function.
+     * @returns {Function} Returns the `lodash` function.
      * @example
      *
-     * var lomonacocoin = _.noConflict();
+     * var lodash = _.noConflict();
      */
     function noConflict() {
       if (root._ === this) {
@@ -35572,327 +35572,327 @@ arguments[4][79][0].apply(exports,arguments)
     /*------------------------------------------------------------------------*/
 
     // Add methods that return wrapped values in chain sequences.
-    lomonacocoin.after = after;
-    lomonacocoin.ary = ary;
-    lomonacocoin.assign = assign;
-    lomonacocoin.assignIn = assignIn;
-    lomonacocoin.assignInWith = assignInWith;
-    lomonacocoin.assignWith = assignWith;
-    lomonacocoin.at = at;
-    lomonacocoin.before = before;
-    lomonacocoin.bind = bind;
-    lomonacocoin.bindAll = bindAll;
-    lomonacocoin.bindKey = bindKey;
-    lomonacocoin.castArray = castArray;
-    lomonacocoin.chain = chain;
-    lomonacocoin.chunk = chunk;
-    lomonacocoin.compact = compact;
-    lomonacocoin.concat = concat;
-    lomonacocoin.cond = cond;
-    lomonacocoin.conforms = conforms;
-    lomonacocoin.constant = constant;
-    lomonacocoin.countBy = countBy;
-    lomonacocoin.create = create;
-    lomonacocoin.curry = curry;
-    lomonacocoin.curryRight = curryRight;
-    lomonacocoin.debounce = debounce;
-    lomonacocoin.defaults = defaults;
-    lomonacocoin.defaultsDeep = defaultsDeep;
-    lomonacocoin.defer = defer;
-    lomonacocoin.delay = delay;
-    lomonacocoin.difference = difference;
-    lomonacocoin.differenceBy = differenceBy;
-    lomonacocoin.differenceWith = differenceWith;
-    lomonacocoin.drop = drop;
-    lomonacocoin.dropRight = dropRight;
-    lomonacocoin.dropRightWhile = dropRightWhile;
-    lomonacocoin.dropWhile = dropWhile;
-    lomonacocoin.fill = fill;
-    lomonacocoin.filter = filter;
-    lomonacocoin.flatMap = flatMap;
-    lomonacocoin.flatMapDeep = flatMapDeep;
-    lomonacocoin.flatMapDepth = flatMapDepth;
-    lomonacocoin.flatten = flatten;
-    lomonacocoin.flattenDeep = flattenDeep;
-    lomonacocoin.flattenDepth = flattenDepth;
-    lomonacocoin.flip = flip;
-    lomonacocoin.flow = flow;
-    lomonacocoin.flowRight = flowRight;
-    lomonacocoin.fromPairs = fromPairs;
-    lomonacocoin.functions = functions;
-    lomonacocoin.functionsIn = functionsIn;
-    lomonacocoin.groupBy = groupBy;
-    lomonacocoin.initial = initial;
-    lomonacocoin.intersection = intersection;
-    lomonacocoin.intersectionBy = intersectionBy;
-    lomonacocoin.intersectionWith = intersectionWith;
-    lomonacocoin.invert = invert;
-    lomonacocoin.invertBy = invertBy;
-    lomonacocoin.invokeMap = invokeMap;
-    lomonacocoin.iteratee = iteratee;
-    lomonacocoin.keyBy = keyBy;
-    lomonacocoin.keys = keys;
-    lomonacocoin.keysIn = keysIn;
-    lomonacocoin.map = map;
-    lomonacocoin.mapKeys = mapKeys;
-    lomonacocoin.mapValues = mapValues;
-    lomonacocoin.matches = matches;
-    lomonacocoin.matchesProperty = matchesProperty;
-    lomonacocoin.memoize = memoize;
-    lomonacocoin.merge = merge;
-    lomonacocoin.mergeWith = mergeWith;
-    lomonacocoin.method = method;
-    lomonacocoin.methodOf = methodOf;
-    lomonacocoin.mixin = mixin;
-    lomonacocoin.negate = negate;
-    lomonacocoin.nthArg = nthArg;
-    lomonacocoin.omit = omit;
-    lomonacocoin.omitBy = omitBy;
-    lomonacocoin.once = once;
-    lomonacocoin.orderBy = orderBy;
-    lomonacocoin.over = over;
-    lomonacocoin.overArgs = overArgs;
-    lomonacocoin.overEvery = overEvery;
-    lomonacocoin.overSome = overSome;
-    lomonacocoin.partial = partial;
-    lomonacocoin.partialRight = partialRight;
-    lomonacocoin.partition = partition;
-    lomonacocoin.pick = pick;
-    lomonacocoin.pickBy = pickBy;
-    lomonacocoin.property = property;
-    lomonacocoin.propertyOf = propertyOf;
-    lomonacocoin.pull = pull;
-    lomonacocoin.pullAll = pullAll;
-    lomonacocoin.pullAllBy = pullAllBy;
-    lomonacocoin.pullAllWith = pullAllWith;
-    lomonacocoin.pullAt = pullAt;
-    lomonacocoin.range = range;
-    lomonacocoin.rangeRight = rangeRight;
-    lomonacocoin.rearg = rearg;
-    lomonacocoin.reject = reject;
-    lomonacocoin.remove = remove;
-    lomonacocoin.rest = rest;
-    lomonacocoin.reverse = reverse;
-    lomonacocoin.sampleSize = sampleSize;
-    lomonacocoin.set = set;
-    lomonacocoin.setWith = setWith;
-    lomonacocoin.shuffle = shuffle;
-    lomonacocoin.slice = slice;
-    lomonacocoin.sortBy = sortBy;
-    lomonacocoin.sortedUniq = sortedUniq;
-    lomonacocoin.sortedUniqBy = sortedUniqBy;
-    lomonacocoin.split = split;
-    lomonacocoin.spread = spread;
-    lomonacocoin.tail = tail;
-    lomonacocoin.take = take;
-    lomonacocoin.takeRight = takeRight;
-    lomonacocoin.takeRightWhile = takeRightWhile;
-    lomonacocoin.takeWhile = takeWhile;
-    lomonacocoin.tap = tap;
-    lomonacocoin.throttle = throttle;
-    lomonacocoin.thru = thru;
-    lomonacocoin.toArray = toArray;
-    lomonacocoin.toPairs = toPairs;
-    lomonacocoin.toPairsIn = toPairsIn;
-    lomonacocoin.toPath = toPath;
-    lomonacocoin.toPlainObject = toPlainObject;
-    lomonacocoin.transform = transform;
-    lomonacocoin.unary = unary;
-    lomonacocoin.union = union;
-    lomonacocoin.unionBy = unionBy;
-    lomonacocoin.unionWith = unionWith;
-    lomonacocoin.uniq = uniq;
-    lomonacocoin.uniqBy = uniqBy;
-    lomonacocoin.uniqWith = uniqWith;
-    lomonacocoin.unset = unset;
-    lomonacocoin.unzip = unzip;
-    lomonacocoin.unzipWith = unzipWith;
-    lomonacocoin.update = update;
-    lomonacocoin.updateWith = updateWith;
-    lomonacocoin.values = values;
-    lomonacocoin.valuesIn = valuesIn;
-    lomonacocoin.without = without;
-    lomonacocoin.words = words;
-    lomonacocoin.wrap = wrap;
-    lomonacocoin.xor = xor;
-    lomonacocoin.xorBy = xorBy;
-    lomonacocoin.xorWith = xorWith;
-    lomonacocoin.zip = zip;
-    lomonacocoin.zipObject = zipObject;
-    lomonacocoin.zipObjectDeep = zipObjectDeep;
-    lomonacocoin.zipWith = zipWith;
+    lodash.after = after;
+    lodash.ary = ary;
+    lodash.assign = assign;
+    lodash.assignIn = assignIn;
+    lodash.assignInWith = assignInWith;
+    lodash.assignWith = assignWith;
+    lodash.at = at;
+    lodash.before = before;
+    lodash.bind = bind;
+    lodash.bindAll = bindAll;
+    lodash.bindKey = bindKey;
+    lodash.castArray = castArray;
+    lodash.chain = chain;
+    lodash.chunk = chunk;
+    lodash.compact = compact;
+    lodash.concat = concat;
+    lodash.cond = cond;
+    lodash.conforms = conforms;
+    lodash.constant = constant;
+    lodash.countBy = countBy;
+    lodash.create = create;
+    lodash.curry = curry;
+    lodash.curryRight = curryRight;
+    lodash.debounce = debounce;
+    lodash.defaults = defaults;
+    lodash.defaultsDeep = defaultsDeep;
+    lodash.defer = defer;
+    lodash.delay = delay;
+    lodash.difference = difference;
+    lodash.differenceBy = differenceBy;
+    lodash.differenceWith = differenceWith;
+    lodash.drop = drop;
+    lodash.dropRight = dropRight;
+    lodash.dropRightWhile = dropRightWhile;
+    lodash.dropWhile = dropWhile;
+    lodash.fill = fill;
+    lodash.filter = filter;
+    lodash.flatMap = flatMap;
+    lodash.flatMapDeep = flatMapDeep;
+    lodash.flatMapDepth = flatMapDepth;
+    lodash.flatten = flatten;
+    lodash.flattenDeep = flattenDeep;
+    lodash.flattenDepth = flattenDepth;
+    lodash.flip = flip;
+    lodash.flow = flow;
+    lodash.flowRight = flowRight;
+    lodash.fromPairs = fromPairs;
+    lodash.functions = functions;
+    lodash.functionsIn = functionsIn;
+    lodash.groupBy = groupBy;
+    lodash.initial = initial;
+    lodash.intersection = intersection;
+    lodash.intersectionBy = intersectionBy;
+    lodash.intersectionWith = intersectionWith;
+    lodash.invert = invert;
+    lodash.invertBy = invertBy;
+    lodash.invokeMap = invokeMap;
+    lodash.iteratee = iteratee;
+    lodash.keyBy = keyBy;
+    lodash.keys = keys;
+    lodash.keysIn = keysIn;
+    lodash.map = map;
+    lodash.mapKeys = mapKeys;
+    lodash.mapValues = mapValues;
+    lodash.matches = matches;
+    lodash.matchesProperty = matchesProperty;
+    lodash.memoize = memoize;
+    lodash.merge = merge;
+    lodash.mergeWith = mergeWith;
+    lodash.method = method;
+    lodash.methodOf = methodOf;
+    lodash.mixin = mixin;
+    lodash.negate = negate;
+    lodash.nthArg = nthArg;
+    lodash.omit = omit;
+    lodash.omitBy = omitBy;
+    lodash.once = once;
+    lodash.orderBy = orderBy;
+    lodash.over = over;
+    lodash.overArgs = overArgs;
+    lodash.overEvery = overEvery;
+    lodash.overSome = overSome;
+    lodash.partial = partial;
+    lodash.partialRight = partialRight;
+    lodash.partition = partition;
+    lodash.pick = pick;
+    lodash.pickBy = pickBy;
+    lodash.property = property;
+    lodash.propertyOf = propertyOf;
+    lodash.pull = pull;
+    lodash.pullAll = pullAll;
+    lodash.pullAllBy = pullAllBy;
+    lodash.pullAllWith = pullAllWith;
+    lodash.pullAt = pullAt;
+    lodash.range = range;
+    lodash.rangeRight = rangeRight;
+    lodash.rearg = rearg;
+    lodash.reject = reject;
+    lodash.remove = remove;
+    lodash.rest = rest;
+    lodash.reverse = reverse;
+    lodash.sampleSize = sampleSize;
+    lodash.set = set;
+    lodash.setWith = setWith;
+    lodash.shuffle = shuffle;
+    lodash.slice = slice;
+    lodash.sortBy = sortBy;
+    lodash.sortedUniq = sortedUniq;
+    lodash.sortedUniqBy = sortedUniqBy;
+    lodash.split = split;
+    lodash.spread = spread;
+    lodash.tail = tail;
+    lodash.take = take;
+    lodash.takeRight = takeRight;
+    lodash.takeRightWhile = takeRightWhile;
+    lodash.takeWhile = takeWhile;
+    lodash.tap = tap;
+    lodash.throttle = throttle;
+    lodash.thru = thru;
+    lodash.toArray = toArray;
+    lodash.toPairs = toPairs;
+    lodash.toPairsIn = toPairsIn;
+    lodash.toPath = toPath;
+    lodash.toPlainObject = toPlainObject;
+    lodash.transform = transform;
+    lodash.unary = unary;
+    lodash.union = union;
+    lodash.unionBy = unionBy;
+    lodash.unionWith = unionWith;
+    lodash.uniq = uniq;
+    lodash.uniqBy = uniqBy;
+    lodash.uniqWith = uniqWith;
+    lodash.unset = unset;
+    lodash.unzip = unzip;
+    lodash.unzipWith = unzipWith;
+    lodash.update = update;
+    lodash.updateWith = updateWith;
+    lodash.values = values;
+    lodash.valuesIn = valuesIn;
+    lodash.without = without;
+    lodash.words = words;
+    lodash.wrap = wrap;
+    lodash.xor = xor;
+    lodash.xorBy = xorBy;
+    lodash.xorWith = xorWith;
+    lodash.zip = zip;
+    lodash.zipObject = zipObject;
+    lodash.zipObjectDeep = zipObjectDeep;
+    lodash.zipWith = zipWith;
 
     // Add aliases.
-    lomonacocoin.entries = toPairs;
-    lomonacocoin.entriesIn = toPairsIn;
-    lomonacocoin.extend = assignIn;
-    lomonacocoin.extendWith = assignInWith;
+    lodash.entries = toPairs;
+    lodash.entriesIn = toPairsIn;
+    lodash.extend = assignIn;
+    lodash.extendWith = assignInWith;
 
-    // Add methods to `lomonacocoin.prototype`.
-    mixin(lomonacocoin, lomonacocoin);
+    // Add methods to `lodash.prototype`.
+    mixin(lodash, lodash);
 
     /*------------------------------------------------------------------------*/
 
     // Add methods that return unwrapped values in chain sequences.
-    lomonacocoin.add = add;
-    lomonacocoin.attempt = attempt;
-    lomonacocoin.camelCase = camelCase;
-    lomonacocoin.capitalize = capitalize;
-    lomonacocoin.ceil = ceil;
-    lomonacocoin.clamp = clamp;
-    lomonacocoin.clone = clone;
-    lomonacocoin.cloneDeep = cloneDeep;
-    lomonacocoin.cloneDeepWith = cloneDeepWith;
-    lomonacocoin.cloneWith = cloneWith;
-    lomonacocoin.conformsTo = conformsTo;
-    lomonacocoin.deburr = deburr;
-    lomonacocoin.defaultTo = defaultTo;
-    lomonacocoin.divide = divide;
-    lomonacocoin.endsWith = endsWith;
-    lomonacocoin.eq = eq;
-    lomonacocoin.escape = escape;
-    lomonacocoin.escapeRegExp = escapeRegExp;
-    lomonacocoin.every = every;
-    lomonacocoin.find = find;
-    lomonacocoin.findIndex = findIndex;
-    lomonacocoin.findKey = findKey;
-    lomonacocoin.findLast = findLast;
-    lomonacocoin.findLastIndex = findLastIndex;
-    lomonacocoin.findLastKey = findLastKey;
-    lomonacocoin.floor = floor;
-    lomonacocoin.forEach = forEach;
-    lomonacocoin.forEachRight = forEachRight;
-    lomonacocoin.forIn = forIn;
-    lomonacocoin.forInRight = forInRight;
-    lomonacocoin.forOwn = forOwn;
-    lomonacocoin.forOwnRight = forOwnRight;
-    lomonacocoin.get = get;
-    lomonacocoin.gt = gt;
-    lomonacocoin.gte = gte;
-    lomonacocoin.has = has;
-    lomonacocoin.hasIn = hasIn;
-    lomonacocoin.head = head;
-    lomonacocoin.identity = identity;
-    lomonacocoin.includes = includes;
-    lomonacocoin.indexOf = indexOf;
-    lomonacocoin.inRange = inRange;
-    lomonacocoin.invoke = invoke;
-    lomonacocoin.isArguments = isArguments;
-    lomonacocoin.isArray = isArray;
-    lomonacocoin.isArrayBuffer = isArrayBuffer;
-    lomonacocoin.isArrayLike = isArrayLike;
-    lomonacocoin.isArrayLikeObject = isArrayLikeObject;
-    lomonacocoin.isBoolean = isBoolean;
-    lomonacocoin.isBuffer = isBuffer;
-    lomonacocoin.isDate = isDate;
-    lomonacocoin.isElement = isElement;
-    lomonacocoin.isEmpty = isEmpty;
-    lomonacocoin.isEqual = isEqual;
-    lomonacocoin.isEqualWith = isEqualWith;
-    lomonacocoin.isError = isError;
-    lomonacocoin.isFinite = isFinite;
-    lomonacocoin.isFunction = isFunction;
-    lomonacocoin.isInteger = isInteger;
-    lomonacocoin.isLength = isLength;
-    lomonacocoin.isMap = isMap;
-    lomonacocoin.isMatch = isMatch;
-    lomonacocoin.isMatchWith = isMatchWith;
-    lomonacocoin.isNaN = isNaN;
-    lomonacocoin.isNative = isNative;
-    lomonacocoin.isNil = isNil;
-    lomonacocoin.isNull = isNull;
-    lomonacocoin.isNumber = isNumber;
-    lomonacocoin.isObject = isObject;
-    lomonacocoin.isObjectLike = isObjectLike;
-    lomonacocoin.isPlainObject = isPlainObject;
-    lomonacocoin.isRegExp = isRegExp;
-    lomonacocoin.isSafeInteger = isSafeInteger;
-    lomonacocoin.isSet = isSet;
-    lomonacocoin.isString = isString;
-    lomonacocoin.isSymbol = isSymbol;
-    lomonacocoin.isTypedArray = isTypedArray;
-    lomonacocoin.isUndefined = isUndefined;
-    lomonacocoin.isWeakMap = isWeakMap;
-    lomonacocoin.isWeakSet = isWeakSet;
-    lomonacocoin.join = join;
-    lomonacocoin.kebabCase = kebabCase;
-    lomonacocoin.last = last;
-    lomonacocoin.lastIndexOf = lastIndexOf;
-    lomonacocoin.lowerCase = lowerCase;
-    lomonacocoin.lowerFirst = lowerFirst;
-    lomonacocoin.lt = lt;
-    lomonacocoin.lte = lte;
-    lomonacocoin.max = max;
-    lomonacocoin.maxBy = maxBy;
-    lomonacocoin.mean = mean;
-    lomonacocoin.meanBy = meanBy;
-    lomonacocoin.min = min;
-    lomonacocoin.minBy = minBy;
-    lomonacocoin.stubArray = stubArray;
-    lomonacocoin.stubFalse = stubFalse;
-    lomonacocoin.stubObject = stubObject;
-    lomonacocoin.stubString = stubString;
-    lomonacocoin.stubTrue = stubTrue;
-    lomonacocoin.multiply = multiply;
-    lomonacocoin.nth = nth;
-    lomonacocoin.noConflict = noConflict;
-    lomonacocoin.noop = noop;
-    lomonacocoin.now = now;
-    lomonacocoin.pad = pad;
-    lomonacocoin.padEnd = padEnd;
-    lomonacocoin.padStart = padStart;
-    lomonacocoin.parseInt = parseInt;
-    lomonacocoin.random = random;
-    lomonacocoin.reduce = reduce;
-    lomonacocoin.reduceRight = reduceRight;
-    lomonacocoin.repeat = repeat;
-    lomonacocoin.replace = replace;
-    lomonacocoin.result = result;
-    lomonacocoin.round = round;
-    lomonacocoin.runInContext = runInContext;
-    lomonacocoin.sample = sample;
-    lomonacocoin.size = size;
-    lomonacocoin.snakeCase = snakeCase;
-    lomonacocoin.some = some;
-    lomonacocoin.sortedIndex = sortedIndex;
-    lomonacocoin.sortedIndexBy = sortedIndexBy;
-    lomonacocoin.sortedIndexOf = sortedIndexOf;
-    lomonacocoin.sortedLastIndex = sortedLastIndex;
-    lomonacocoin.sortedLastIndexBy = sortedLastIndexBy;
-    lomonacocoin.sortedLastIndexOf = sortedLastIndexOf;
-    lomonacocoin.startCase = startCase;
-    lomonacocoin.startsWith = startsWith;
-    lomonacocoin.subtract = subtract;
-    lomonacocoin.sum = sum;
-    lomonacocoin.sumBy = sumBy;
-    lomonacocoin.template = template;
-    lomonacocoin.times = times;
-    lomonacocoin.toFinite = toFinite;
-    lomonacocoin.toInteger = toInteger;
-    lomonacocoin.toLength = toLength;
-    lomonacocoin.toLower = toLower;
-    lomonacocoin.toNumber = toNumber;
-    lomonacocoin.toSafeInteger = toSafeInteger;
-    lomonacocoin.toString = toString;
-    lomonacocoin.toUpper = toUpper;
-    lomonacocoin.trim = trim;
-    lomonacocoin.trimEnd = trimEnd;
-    lomonacocoin.trimStart = trimStart;
-    lomonacocoin.truncate = truncate;
-    lomonacocoin.unescape = unescape;
-    lomonacocoin.uniqueId = uniqueId;
-    lomonacocoin.upperCase = upperCase;
-    lomonacocoin.upperFirst = upperFirst;
+    lodash.add = add;
+    lodash.attempt = attempt;
+    lodash.camelCase = camelCase;
+    lodash.capitalize = capitalize;
+    lodash.ceil = ceil;
+    lodash.clamp = clamp;
+    lodash.clone = clone;
+    lodash.cloneDeep = cloneDeep;
+    lodash.cloneDeepWith = cloneDeepWith;
+    lodash.cloneWith = cloneWith;
+    lodash.conformsTo = conformsTo;
+    lodash.deburr = deburr;
+    lodash.defaultTo = defaultTo;
+    lodash.divide = divide;
+    lodash.endsWith = endsWith;
+    lodash.eq = eq;
+    lodash.escape = escape;
+    lodash.escapeRegExp = escapeRegExp;
+    lodash.every = every;
+    lodash.find = find;
+    lodash.findIndex = findIndex;
+    lodash.findKey = findKey;
+    lodash.findLast = findLast;
+    lodash.findLastIndex = findLastIndex;
+    lodash.findLastKey = findLastKey;
+    lodash.floor = floor;
+    lodash.forEach = forEach;
+    lodash.forEachRight = forEachRight;
+    lodash.forIn = forIn;
+    lodash.forInRight = forInRight;
+    lodash.forOwn = forOwn;
+    lodash.forOwnRight = forOwnRight;
+    lodash.get = get;
+    lodash.gt = gt;
+    lodash.gte = gte;
+    lodash.has = has;
+    lodash.hasIn = hasIn;
+    lodash.head = head;
+    lodash.identity = identity;
+    lodash.includes = includes;
+    lodash.indexOf = indexOf;
+    lodash.inRange = inRange;
+    lodash.invoke = invoke;
+    lodash.isArguments = isArguments;
+    lodash.isArray = isArray;
+    lodash.isArrayBuffer = isArrayBuffer;
+    lodash.isArrayLike = isArrayLike;
+    lodash.isArrayLikeObject = isArrayLikeObject;
+    lodash.isBoolean = isBoolean;
+    lodash.isBuffer = isBuffer;
+    lodash.isDate = isDate;
+    lodash.isElement = isElement;
+    lodash.isEmpty = isEmpty;
+    lodash.isEqual = isEqual;
+    lodash.isEqualWith = isEqualWith;
+    lodash.isError = isError;
+    lodash.isFinite = isFinite;
+    lodash.isFunction = isFunction;
+    lodash.isInteger = isInteger;
+    lodash.isLength = isLength;
+    lodash.isMap = isMap;
+    lodash.isMatch = isMatch;
+    lodash.isMatchWith = isMatchWith;
+    lodash.isNaN = isNaN;
+    lodash.isNative = isNative;
+    lodash.isNil = isNil;
+    lodash.isNull = isNull;
+    lodash.isNumber = isNumber;
+    lodash.isObject = isObject;
+    lodash.isObjectLike = isObjectLike;
+    lodash.isPlainObject = isPlainObject;
+    lodash.isRegExp = isRegExp;
+    lodash.isSafeInteger = isSafeInteger;
+    lodash.isSet = isSet;
+    lodash.isString = isString;
+    lodash.isSymbol = isSymbol;
+    lodash.isTypedArray = isTypedArray;
+    lodash.isUndefined = isUndefined;
+    lodash.isWeakMap = isWeakMap;
+    lodash.isWeakSet = isWeakSet;
+    lodash.join = join;
+    lodash.kebabCase = kebabCase;
+    lodash.last = last;
+    lodash.lastIndexOf = lastIndexOf;
+    lodash.lowerCase = lowerCase;
+    lodash.lowerFirst = lowerFirst;
+    lodash.lt = lt;
+    lodash.lte = lte;
+    lodash.max = max;
+    lodash.maxBy = maxBy;
+    lodash.mean = mean;
+    lodash.meanBy = meanBy;
+    lodash.min = min;
+    lodash.minBy = minBy;
+    lodash.stubArray = stubArray;
+    lodash.stubFalse = stubFalse;
+    lodash.stubObject = stubObject;
+    lodash.stubString = stubString;
+    lodash.stubTrue = stubTrue;
+    lodash.multiply = multiply;
+    lodash.nth = nth;
+    lodash.noConflict = noConflict;
+    lodash.noop = noop;
+    lodash.now = now;
+    lodash.pad = pad;
+    lodash.padEnd = padEnd;
+    lodash.padStart = padStart;
+    lodash.parseInt = parseInt;
+    lodash.random = random;
+    lodash.reduce = reduce;
+    lodash.reduceRight = reduceRight;
+    lodash.repeat = repeat;
+    lodash.replace = replace;
+    lodash.result = result;
+    lodash.round = round;
+    lodash.runInContext = runInContext;
+    lodash.sample = sample;
+    lodash.size = size;
+    lodash.snakeCase = snakeCase;
+    lodash.some = some;
+    lodash.sortedIndex = sortedIndex;
+    lodash.sortedIndexBy = sortedIndexBy;
+    lodash.sortedIndexOf = sortedIndexOf;
+    lodash.sortedLastIndex = sortedLastIndex;
+    lodash.sortedLastIndexBy = sortedLastIndexBy;
+    lodash.sortedLastIndexOf = sortedLastIndexOf;
+    lodash.startCase = startCase;
+    lodash.startsWith = startsWith;
+    lodash.subtract = subtract;
+    lodash.sum = sum;
+    lodash.sumBy = sumBy;
+    lodash.template = template;
+    lodash.times = times;
+    lodash.toFinite = toFinite;
+    lodash.toInteger = toInteger;
+    lodash.toLength = toLength;
+    lodash.toLower = toLower;
+    lodash.toNumber = toNumber;
+    lodash.toSafeInteger = toSafeInteger;
+    lodash.toString = toString;
+    lodash.toUpper = toUpper;
+    lodash.trim = trim;
+    lodash.trimEnd = trimEnd;
+    lodash.trimStart = trimStart;
+    lodash.truncate = truncate;
+    lodash.unescape = unescape;
+    lodash.uniqueId = uniqueId;
+    lodash.upperCase = upperCase;
+    lodash.upperFirst = upperFirst;
 
     // Add aliases.
-    lomonacocoin.each = forEach;
-    lomonacocoin.eachRight = forEachRight;
-    lomonacocoin.first = head;
+    lodash.each = forEach;
+    lodash.eachRight = forEachRight;
+    lodash.first = head;
 
-    mixin(lomonacocoin, (function() {
+    mixin(lodash, (function() {
       var source = {};
-      baseForOwn(lomonacocoin, function(func, methodName) {
-        if (!hasOwnProperty.call(lomonacocoin.prototype, methodName)) {
+      baseForOwn(lodash, function(func, methodName) {
+        if (!hasOwnProperty.call(lodash.prototype, methodName)) {
           source[methodName] = func;
         }
       });
@@ -35908,11 +35908,11 @@ arguments[4][79][0].apply(exports,arguments)
      * @memberOf _
      * @type {string}
      */
-    lomonacocoin.VERSION = VERSION;
+    lodash.VERSION = VERSION;
 
     // Assign default placeholders.
     arrayEach(['bind', 'bindKey', 'curry', 'curryRight', 'partial', 'partialRight'], function(methodName) {
-      lomonacocoin[methodName].placeholder = lomonacocoin;
+      lodash[methodName].placeholder = lodash;
     });
 
     // Add `LazyWrapper` methods for `_.drop` and `_.take` variants.
@@ -36027,17 +36027,17 @@ arguments[4][79][0].apply(exports,arguments)
       return this.take(MAX_ARRAY_LENGTH);
     };
 
-    // Add `LazyWrapper` methods to `lomonacocoin.prototype`.
+    // Add `LazyWrapper` methods to `lodash.prototype`.
     baseForOwn(LazyWrapper.prototype, function(func, methodName) {
       var checkIteratee = /^(?:filter|find|map|reject)|While$/.test(methodName),
           isTaker = /^(?:head|last)$/.test(methodName),
-          lomonacocoinFunc = lomonacocoin[isTaker ? ('take' + (methodName == 'last' ? 'Right' : '')) : methodName],
+          lodashFunc = lodash[isTaker ? ('take' + (methodName == 'last' ? 'Right' : '')) : methodName],
           retUnwrapped = isTaker || /^find/.test(methodName);
 
-      if (!lomonacocoinFunc) {
+      if (!lodashFunc) {
         return;
       }
-      lomonacocoin.prototype[methodName] = function() {
+      lodash.prototype[methodName] = function() {
         var value = this.__wrapped__,
             args = isTaker ? [1] : arguments,
             isLazy = value instanceof LazyWrapper,
@@ -36045,7 +36045,7 @@ arguments[4][79][0].apply(exports,arguments)
             useLazy = isLazy || isArray(value);
 
         var interceptor = function(value) {
-          var result = lomonacocoinFunc.apply(lomonacocoin, arrayPush([value], args));
+          var result = lodashFunc.apply(lodash, arrayPush([value], args));
           return (isTaker && chainAll) ? result[0] : result;
         };
 
@@ -36062,7 +36062,7 @@ arguments[4][79][0].apply(exports,arguments)
           value = onlyLazy ? value : new LazyWrapper(this);
           var result = func.apply(value, args);
           result.__actions__.push({ 'func': thru, 'args': [interceptor], 'thisArg': undefined });
-          return new LomonacocoinWrapper(result, chainAll);
+          return new lodashWrapper(result, chainAll);
         }
         if (isUnwrapped && onlyLazy) {
           return func.apply(this, args);
@@ -36072,13 +36072,13 @@ arguments[4][79][0].apply(exports,arguments)
       };
     });
 
-    // Add `Array` methods to `lomonacocoin.prototype`.
+    // Add `Array` methods to `lodash.prototype`.
     arrayEach(['pop', 'push', 'shift', 'sort', 'splice', 'unshift'], function(methodName) {
       var func = arrayProto[methodName],
           chainName = /^(?:push|sort|unshift)$/.test(methodName) ? 'tap' : 'thru',
           retUnwrapped = /^(?:pop|shift)$/.test(methodName);
 
-      lomonacocoin.prototype[methodName] = function() {
+      lodash.prototype[methodName] = function() {
         var args = arguments;
         if (retUnwrapped && !this.__chain__) {
           var value = this.value();
@@ -36092,12 +36092,12 @@ arguments[4][79][0].apply(exports,arguments)
 
     // Map minified method names to their real names.
     baseForOwn(LazyWrapper.prototype, function(func, methodName) {
-      var lomonacocoinFunc = lomonacocoin[methodName];
-      if (lomonacocoinFunc) {
-        var key = (lomonacocoinFunc.name + ''),
+      var lodashFunc = lodash[methodName];
+      if (lodashFunc) {
+        var key = (lodashFunc.name + ''),
             names = realNames[key] || (realNames[key] = []);
 
-        names.push({ 'name': methodName, 'func': lomonacocoinFunc });
+        names.push({ 'name': methodName, 'func': lodashFunc });
       }
     });
 
@@ -36111,35 +36111,35 @@ arguments[4][79][0].apply(exports,arguments)
     LazyWrapper.prototype.reverse = lazyReverse;
     LazyWrapper.prototype.value = lazyValue;
 
-    // Add chain sequence methods to the `lomonacocoin` wrapper.
-    lomonacocoin.prototype.at = wrapperAt;
-    lomonacocoin.prototype.chain = wrapperChain;
-    lomonacocoin.prototype.commit = wrapperCommit;
-    lomonacocoin.prototype.next = wrapperNext;
-    lomonacocoin.prototype.plant = wrapperPlant;
-    lomonacocoin.prototype.reverse = wrapperReverse;
-    lomonacocoin.prototype.toJSON = lomonacocoin.prototype.valueOf = lomonacocoin.prototype.value = wrapperValue;
+    // Add chain sequence methods to the `lodash` wrapper.
+    lodash.prototype.at = wrapperAt;
+    lodash.prototype.chain = wrapperChain;
+    lodash.prototype.commit = wrapperCommit;
+    lodash.prototype.next = wrapperNext;
+    lodash.prototype.plant = wrapperPlant;
+    lodash.prototype.reverse = wrapperReverse;
+    lodash.prototype.toJSON = lodash.prototype.valueOf = lodash.prototype.value = wrapperValue;
 
     // Add lazy aliases.
-    lomonacocoin.prototype.first = lomonacocoin.prototype.head;
+    lodash.prototype.first = lodash.prototype.head;
 
     if (symIterator) {
-      lomonacocoin.prototype[symIterator] = wrapperToIterator;
+      lodash.prototype[symIterator] = wrapperToIterator;
     }
-    return lomonacocoin;
+    return lodash;
   });
 
   /*--------------------------------------------------------------------------*/
 
-  // Export lomonacocoin.
+  // Export lodash.
   var _ = runInContext();
 
   // Some AMD build optimizers, like r.js, check for condition patterns like:
   if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) {
-    // Expose Lomonacocoin on the global object to prevent errors when Lomonacocoin is
+    // Expose lodash on the global object to prevent errors when lodash is
     // loaded by a script tag in the presence of an AMD loader.
     // See http://requirejs.org/docs/errors.html#mismatch for more details.
-    // Use `_.noConflict` to remove Lomonacocoin from the global object.
+    // Use `_.noConflict` to remove lodash from the global object.
     root._ = _;
 
     // Define as an anonymous module so, through path mapping, it can be
@@ -43418,7 +43418,7 @@ module.exports={
     "buffer-compare": "=1.0.0",
     "elliptic": "=3.0.3",
     "inherits": "=2.0.1",
-    "lomonacocoin": "=4.17.1",
+    "lodash": "=4.17.1",
     "sha512": "=0.0.1",
     "x11-hash-js": "^1.0.0"
   },
