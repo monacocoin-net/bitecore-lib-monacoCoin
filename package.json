@@ -110,7 +110,7 @@
     "x11-hash-js": "^1.0.0"
   },
   "devDependencies": {
-    "bitcore-build-monacocoin": "bitcore-build-monacocoin",
+    "bitcore-build-monacocoin": "=0.8.3",
     "browserify": "latest",
     "brfs": "^1.2.0",
     "chai": "^1.10.0",
